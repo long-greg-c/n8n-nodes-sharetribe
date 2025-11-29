@@ -1,0 +1,39 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"attributes": {
+			"type": "object",
+			"properties": {
+				"start": {
+					"type": "string"
+				},
+				"end": {
+					"type": "string"
+				},
+				"seats": {
+					"type": "integer"
+				}
+			}
+		},
+		"relationships": {
+			"type": "object",
+			"properties": {
+				"listing": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,32 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"attributes": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"url": {
+					"type": "string"
+				},
+				"currency": {
+					"type": "string"
+				},
+				"timezone": {
+					"type": "string"
+				},
+				"distanceUnit": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"version": 1
+}

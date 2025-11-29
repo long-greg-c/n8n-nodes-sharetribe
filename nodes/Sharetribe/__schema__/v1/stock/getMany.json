@@ -1,0 +1,55 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"attributes": {
+			"type": "object",
+			"properties": {
+				"at": {
+					"type": "string"
+				},
+				"quantity": {
+					"type": "integer"
+				}
+			}
+		},
+		"relationships": {
+			"type": "object",
+			"properties": {
+				"listing": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"type": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"stockReservation": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": [
+								"object",
+								"null"
+							]
+						}
+					}
+				}
+			}
+		}
+	},
+	"version": 1
+}

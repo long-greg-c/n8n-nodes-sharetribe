@@ -1,0 +1,116 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"attributes": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				},
+				"availabilityPlan": {
+					"type": [
+						"object",
+						"null"
+					]
+				},
+				"createdAt": {
+					"type": "string"
+				},
+				"deleted": {
+					"type": "boolean"
+				},
+				"geolocation": {
+					"type": [
+						"object",
+						"null"
+					]
+				},
+				"metadata": {
+					"type": "object"
+				},
+				"price": {
+					"type": "object",
+					"properties": {
+						"amount": {
+							"type": "integer"
+						},
+						"currency": {
+							"type": "string"
+						}
+					}
+				},
+				"privateData": {
+					"type": "object"
+				},
+				"protectedData": {
+					"type": "object"
+				},
+				"publicData": {
+					"type": "object"
+				},
+				"state": {
+					"type": "string"
+				}
+			}
+		},
+		"relationships": {
+			"type": "object",
+			"properties": {
+				"author": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				},
+				"images": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "array",
+							"items": {
+								"type": "object"
+							}
+						}
+					}
+				},
+				"marketplace": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				},
+				"currentStock": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": [
+								"object",
+								"null"
+							]
+						}
+					}
+				}
+			}
+		},
+		"included": {
+			"type": "array",
+			"items": {
+				"type": "object"
+			}
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"attributes": {
+			"type": "object",
+			"properties": {
+				"variants": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"width": {
+								"type": "integer"
+							},
+							"height": {
+								"type": "integer"
+							},
+							"url": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"version": 1
+}

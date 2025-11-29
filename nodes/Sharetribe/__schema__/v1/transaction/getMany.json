@@ -1,0 +1,154 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"attributes": {
+			"type": "object",
+			"properties": {
+				"createdAt": {
+					"type": "string"
+				},
+				"lastTransition": {
+					"type": "string"
+				},
+				"lastTransitionedAt": {
+					"type": "string"
+				},
+				"lineItems": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				},
+				"metadata": {
+					"type": "object"
+				},
+				"payinTotal": {
+					"type": "object",
+					"properties": {
+						"amount": {
+							"type": "integer"
+						},
+						"currency": {
+							"type": "string"
+						}
+					}
+				},
+				"payoutTotal": {
+					"type": "object",
+					"properties": {
+						"amount": {
+							"type": "integer"
+						},
+						"currency": {
+							"type": "string"
+						}
+					}
+				},
+				"processName": {
+					"type": "string"
+				},
+				"processVersion": {
+					"type": "integer"
+				},
+				"protectedData": {
+					"type": "object"
+				},
+				"state": {
+					"type": "string"
+				},
+				"transitions": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"at": {
+								"type": "string"
+							},
+							"by": {
+								"type": "string"
+							},
+							"transition": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		},
+		"relationships": {
+			"type": "object",
+			"properties": {
+				"customer": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				},
+				"provider": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				},
+				"listing": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				},
+				"booking": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": [
+								"object",
+								"null"
+							]
+						}
+					}
+				},
+				"reviews": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "array",
+							"items": {
+								"type": "object"
+							}
+						}
+					}
+				},
+				"messages": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "array",
+							"items": {
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"included": {
+			"type": "array",
+			"items": {
+				"type": "object"
+			}
+		}
+	},
+	"version": 1
+}

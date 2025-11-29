@@ -1,0 +1,101 @@
+{
+	"name": "Get transactions for listings by listing title",
+	"nodes": [
+		{
+			"parameters": {},
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1,
+			"position": [0, 0],
+			"id": "7a236192-2142-432e-a019-42679e521345",
+			"name": "When clicking ‘Execute workflow’"
+		},
+		{
+			"parameters": {
+				"resource": "listing",
+				"operation": "query",
+				"includeOptions": [],
+				"limit": 30
+			},
+			"type": "CUSTOM.sharetribe",
+			"typeVersion": 1,
+			"position": [240, 48],
+			"id": "899dc088-2f71-4193-aa85-bdcc8661d7e2",
+			"name": "Get many",
+			"credentials": {
+				"sharetribeOAuth2Api": {
+					"id": "rdh6oBdsft287hda",
+					"name": "Sharetribe test"
+				}
+			}
+		},
+		{
+			"parameters": {
+				"resource": "transaction",
+				"operation": "query",
+				"limit": 1,
+				"includeOptions": [
+					"state",
+					"lastTransition",
+					"lastTransitionedAt",
+					"processName",
+					"listing"
+				],
+				"filterOptions": {
+					"filters": [
+						{
+							"filterType": "listingId",
+							"listingId": "={{ $json.id }}"
+						}
+					]
+				}
+			},
+			"type": "CUSTOM.sharetribe",
+			"typeVersion": 1,
+			"position": [448, 48],
+			"id": "df453051-46a5-4906-9caa-94d02cb46569",
+			"name": "Get many1",
+			"credentials": {
+				"sharetribeOAuth2Api": {
+					"id": "rdh6oBdsft287hda",
+					"name": "Sharetribe test"
+				}
+			}
+		}
+	],
+	"pinData": {},
+	"connections": {
+		"When clicking ‘Execute workflow’": {
+			"main": [
+				[
+					{
+						"node": "Get many",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"Get many": {
+			"main": [
+				[
+					{
+						"node": "Get many1",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		}
+	},
+	"active": false,
+	"settings": {
+		"executionOrder": "v1"
+	},
+	"versionId": "fcc8ab07-ad73-454e-885a-0c66d9176c29",
+	"meta": {
+		"templateCredsSetupCompleted": true,
+		"instanceId": "97b53b1216c731a0a0499cfdb1bce3c7f353930c06fd290a5d88b62008d30ac1"
+	},
+	"id": "V2WIp3kNQ8Gtto3h",
+	"tags": []
+}

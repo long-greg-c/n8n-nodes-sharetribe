@@ -1,0 +1,66 @@
+{
+	"name": "n8n-nodes-sharetribe",
+	"version": "0.1.0",
+	"description": "n8n community node for Sharetribe marketplace platform integration",
+	"license": "MIT",
+	"homepage": "https://github.com/bookyrslf-experiences-inc/n8n-nodes-sharetribe",
+	"keywords": [
+		"n8n-community-node-package",
+		"sharetribe",
+		"marketplace",
+		"e-commerce",
+		"automation",
+		"workflow",
+		"integration",
+		"api"
+	],
+	"author": {
+		"name": "Greg Long",
+		"email": "greg@hack0xchet.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/long-greg-c/n8n-nodes-sharetribe.git"
+	},
+	"scripts": {
+		"build": "npm run generate:schemas && n8n-node build",
+		"build:watch": "tsc --watch",
+		"generate:schemas": "npx ts-node scripts/generateSchemas.ts",
+		"kill:n8n": "lsof -ti:5678 | xargs kill -9 2>/dev/null || true",
+		"dev": "n8n-node dev",
+		"n8n": "N8N_USER_FOLDER=$HOME/.n8n-node-cli npx n8n@latest",
+		"import:workflows": "npm run n8n -- import:workflow --separate --input=./workflows-test",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/SharetribeOAuth2Api.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Sharetribe/Sharetribe.node.js",
+			"dist/nodes/Sharetribe/SharetribeTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "*",
+		"@types/node": "^24.10.1",
+		"eslint": "9.32.0",
+		"moment": "^2.30.1",
+		"prettier": "3.6.2",
+		"release-it": "^19.0.4",
+		"ts-node": "^10.9.2",
+		"typescript": "5.9.2"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	},
+	"dependencies": {}
+}

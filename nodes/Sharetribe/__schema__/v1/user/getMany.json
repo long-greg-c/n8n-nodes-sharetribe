@@ -1,0 +1,151 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"attributes": {
+			"type": "object",
+			"properties": {
+				"banned": {
+					"type": "boolean"
+				},
+				"createdAt": {
+					"type": "string"
+				},
+				"deleted": {
+					"type": "boolean"
+				},
+				"email": {
+					"type": "string"
+				},
+				"emailVerified": {
+					"type": "boolean"
+				},
+				"pendingEmail": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"profile": {
+					"type": "object",
+					"properties": {
+						"abbreviatedName": {
+							"type": "string"
+						},
+						"bio": {
+							"type": [
+								"string",
+								"null"
+							]
+						},
+						"displayName": {
+							"type": "string"
+						},
+						"firstName": {
+							"type": "string"
+						},
+						"lastName": {
+							"type": "string"
+						},
+						"publicData": {
+							"type": "object"
+						},
+						"protectedData": {
+							"type": "object"
+						},
+						"privateData": {
+							"type": "object"
+						},
+						"metadata": {
+							"type": "object"
+						}
+					}
+				},
+				"state": {
+					"type": "string"
+				},
+				"stripeConnected": {
+					"type": "boolean"
+				},
+				"stripePayoutsEnabled": {
+					"type": "boolean"
+				},
+				"stripeChargesEnabled": {
+					"type": "boolean"
+				},
+				"identityProviders": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"idpId": {
+								"type": "string"
+							},
+							"userId": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"metadata": {
+					"type": "object"
+				}
+			}
+		},
+		"relationships": {
+			"type": "object",
+			"properties": {
+				"marketplace": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				},
+				"profileImage": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": [
+								"object",
+								"null"
+							]
+						}
+					}
+				},
+				"stripeAccount": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": [
+								"object",
+								"null"
+							]
+						}
+					}
+				},
+				"effectivePermissionSet": {
+					"type": "object",
+					"properties": {
+						"data": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"included": {
+			"type": "array",
+			"items": {
+				"type": "object"
+			}
+		}
+	},
+	"version": 1
+}
